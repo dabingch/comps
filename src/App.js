@@ -5,7 +5,7 @@ function App() {
 	return (
 		<div>
 			<div>
-				<Button secondary outline rounded>
+				<Button secondary outline rounded className='mb-5'>
 					<GoBell />
 					Click me!!!
 				</Button>
