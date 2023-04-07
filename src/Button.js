@@ -10,7 +10,7 @@ function Button({
 	outline,
 	rounded,
 }) {
-	return <button>{children}</button>
+	return <button className='font-bold'>{children}</button>
 }
 
 Button.propTypes = {
