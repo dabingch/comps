@@ -6,12 +6,15 @@ const Dropdown = ({ options, value, onChange }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const divEl = useRef()
 
+	// * Close the dropdown if the user clicks outside the dropdown
 	useEffect(() => {
 		const handler = (event) => {
+			// * Handle exceptions
 			if (!divEl.current) {
 				return
 			}
 
+			// * Click outside the dropdown
 			if (!divEl.current.contains(event.target)) {
 				setIsOpen(false)
 			}
