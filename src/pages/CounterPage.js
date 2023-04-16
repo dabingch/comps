@@ -1,3 +1,4 @@
+import produce from 'immer'
 import { useReducer } from 'react'
 import Button from '../components/Button'
 import Panel from '../components/Panel'
@@ -7,6 +8,7 @@ const DECREMENT_COUNT = 'decrement'
 const SET_VALUE_TO_ADD = 'change_value_to_add'
 const ADD_VALUE_TO_COUNT = 'add_value_to_count'
 
+// Whatever actions will return a new state
 const reducer = (state, action) => {
 	switch (action.type) {
 		case INCREMENT_COUNT:
@@ -42,6 +44,12 @@ function CounterPage({ initialCount }) {
 		count: initialCount,
 		valueToAdd: 0,
 	})
+
+	// ! Use produce from immer to make the state mutable
+	// const [state, dispatch] = useReducer(produce(reducer), {
+	// 	count: initialCount,
+	// 	valueToAdd: 0,
+	// })
 
 	const increment = () => {
 		dispatch({
