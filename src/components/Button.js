@@ -23,7 +23,9 @@ function Button({
 			'border-red-500 bg-red-500 ': danger,
 			'rounded-full': rounded,
 			'bg-white': outline,
-			'text-white': !outline,
+			'text-white':
+				!outline &&
+				(primary || secondary || success || danger || warning),
 			'text-blue-500': outline && primary,
 			'text-gray-900': outline && secondary,
 			'text-green-500': outline && success,
